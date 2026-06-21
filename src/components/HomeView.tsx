@@ -91,7 +91,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
     },
     {
       id: 'proads',
-      name: currentLang === 'ar' ? 'ProAds والكاركتر Dolly' : 'ProAds & Dolphin Dolly',
+      name: currentLang === 'ar' ? 'ProAds' : 'ProAds & Dolphin Dolly',
       tagline: currentLang === 'ar' ? 'تقنيات العرض الضوئي التفاعلي والذكاء التسويقي المبتكر في المراكز التجارية.' : 'Patented laser 3D holographic projection and immersive character engine.',
       type: 'internal',
       badge: 'Proprietary',

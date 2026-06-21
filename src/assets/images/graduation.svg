@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <rect width="800" height="500" rx="24" fill="#062f21"/>
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fcd34d" />
+      <stop offset="50%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+    <linearGradient id="fabricGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#047857" />
+      <stop offset="50%" stop-color="#065f46" />
+      <stop offset="100%" stop-color="#064e3b" />
+    </linearGradient>
+  </defs>
+
+  <!-- Islamic elegant geometric pattern background elements -->
+  <g opacity="0.1" stroke="#fcd34d" stroke-width="1.5" fill="none">
+    <polygon points="400,50 490,140 400,230 310,140" />
+    <polygon points="400,10 520,130 400,250 280,130" />
+    <polygon points="400,270 490,360 400,450 310,360" />
+    <line x1="0" y1="250" x2="800" y2="250" />
+    <line x1="400" y1="0" x2="400" y2="500" />
+  </g>
+
+  <!-- Luxury hanger structure -->
+  <g transform="translate(400, 80)">
+    <!-- Hanger Hook -->
+    <path d="M 0 0 C 0 -40, 20 -40, 20 -20 C 20 -10, 0 0, 0 10" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-linecap="round"/>
+    <!-- Triangular Shoulder bar -->
+    <path d="M -150 40 L 0 10 L 150 40 Z" fill="#042f1a" stroke="url(#goldGrad)" stroke-width="4.5" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Elegant Robe on hanger -->
+  <g transform="translate(400, 120)">
+    <!-- Body Back Panel -->
+    <path d="M -130 5 L 130 5 L 170 300 L -170 300 Z" fill="url(#fabricGrad)" />
+    
+    <!-- Left Sleeve -->
+    <path d="M -130 5 L -190 120 L -150 220 L -90 100 Z" fill="#064e3b" stroke="#042f1a" stroke-width="2"/>
+    <!-- Right Sleeve -->
+    <path d="M 130 5 L 190 120 L 150 220 L 90 100 Z" fill="#022c22" stroke="#042f1a" stroke-width="2"/>
+
+    <!-- Left & Right gold embroidered bishat lapels (The Saudi Bishat Gown signature) -->
+    <!-- Left Lapel -->
+    <path d="M -45 5 L -5 5 L -25 300 L -75 300 Z" fill="url(#goldGrad)" />
+    <!-- Right Lapel -->
+    <path d="M 5 5 L 45 5 L 75 300 L 25 300 Z" fill="url(#goldGrad)" />
+
+    <!-- Fine embroidery details on bishat borders -->
+    <path d="M -25 5 L -45 300 M -15 5 L -35 300" stroke="#78350f" stroke-width="1.5" stroke-dasharray="4,2" />
+    <path d="M 25 5 L 45 300 M 15 5 L 35 300" stroke="#78350f" stroke-width="1.5" stroke-dasharray="4,2" />
+
+    <!-- Premium Academic hood / collar representation -->
+    <path d="M -50 5 C -50 -30, 50 -30, 50 5" fill="none" stroke="url(#goldGrad)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Left Text Panel -->
+  <g transform="translate(50, 180)">
+    <text x="0" y="0" fill="#fef08a" font-family="system-ui, sans-serif" font-size="28" font-weight="900" letter-spacing="1">Saudi Gowns</text>
+    <text x="0" y="32" fill="#34d399" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" tracking="2">100% ORIGINAL DESIGN</text>
+    <text x="0" y="70" fill="#a7f3d0" font-family="system-ui, sans-serif" font-size="12" font-weight="500">
+      <tspan x="0" dy="0">● High-end authentic heritage custom coats</tspan>
+      <tspan x="0" dy="22">● Premium gold threads &amp; embroidery styles</tspan>
+      <tspan x="0" dy="22">● Tailored for national universities &amp; schools</tspan>
+    </text>
+  </g>
+</svg>

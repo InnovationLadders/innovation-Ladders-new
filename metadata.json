@@ -1,0 +1,6 @@
+{
+  "name": "Innovation Ladders",
+  "description": "سلالم الإبداع - معمل ابتكار لتطوير المنتجات والخدمات الريادية من الفكرة وحتى السوق",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -176,7 +176,7 @@ export default function Footer({ currentLang }: FooterProps) {
           <div className="flex gap-4 mt-4 md:mt-0 text-xs text-slate-600">
             <span>Jeddah Corniche Waterfront</span>
             <span>•</span>
-            <span>Wix Independent Migration 2025</span>
+            <span> 2025</span>
           </div>
         </div>
 

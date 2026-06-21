@@ -229,7 +229,7 @@ export const proadsPageData: Record<'ar' | 'en', SubPageContent> = {
     inquiryContact: "0554344899"
   },
   en: {
-    title: "ProAds™ Technology & Dolly™",
+    title: "ProAds™ Technology™",
     subtitle: "Revolutionary patented 3D display technology and the interactive dolphin experience",
     intro: "ProAds™ and The Dolly™ represent the pinnacle of our experiential marketing products designed to capture eyeballs, drive brand engagement, and create unforgettable interactions.",
     sections: [
@@ -246,7 +246,7 @@ export const proadsPageData: Record<'ar' | 'en', SubPageContent> = {
         content: "Perfect for shopping mall central plazas, retail store entrances, corporate lobbies, amusement venues, crowded escalators, and low-light exhibition booths to create a strong crowd pulling magnet."
       }
     ],
-    bulletsHeader: "Key Advantages of ProAds™ & Dolly™:",
+    bulletsHeader: "Key Advantages of ProAds™ ™:",
     bullets: [
       "Requires absolutely zero physical floor space, entirely safe and fluid.",
       "Stellar retention rate - keeps kids and shoppers engaged 4x longer than standard ads.",

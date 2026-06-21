@@ -200,7 +200,7 @@ export const gulfHatPageData: Record<'ar' | 'en', SubPageContent> = {
 
 export const proadsPageData: Record<'ar' | 'en', SubPageContent> = {
   ar: {
-    title: "تقنية ProAds والكاركتر Dolly",
+    title: "تقنية ProAds ",
     subtitle: "حلول الدعاية والترويج الحاصلة على براءة اختراع بتقنية الإسقاط ثلاثي الأبعاد والذكاء التفاعلي",
     intro: "أجهزة ProAds™ وشخصية دجلة (The Dolly™) هما مخرجان إبداعيان مخصصان لمراكز التسوق والأماكن العامة لإبهار الزوار وخلق تجارب تسويقية وتوعوية غير مسبوقة.",
     sections: [

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { proadsPageData } from '../pagesData';
 import { translations } from '../translations';
-import proadsImg from '../assets/images/proads.svg';
-import { Play, Sparkles, Tv, CheckCircle, Smartphone, Send, PhoneCall } from 'lucide-react';
+import proadsImg from '../assets/images/logoproads-05.png';
+import { Play, Sparkles, Tv, CircleCheck as CheckCircle, Smartphone, Send, PhoneCall } from 'lucide-react';
 
 interface ProAdsViewProps {
   currentLang: 'ar' | 'en';
@@ -63,7 +63,7 @@ export default function ProAdsView({ currentLang }: ProAdsViewProps) {
               <img 
                 src={proadsImg} 
                 alt="ProAds Interactive Holographic Dolphin Experience in Mall" 
-                className="absolute inset-0 w-full h-full object-cover opacity-80"
+                className="absolute inset-0 w-full h-full object-contain p-8 opacity-95"
                 referrerPolicy="no-referrer"
               />
               

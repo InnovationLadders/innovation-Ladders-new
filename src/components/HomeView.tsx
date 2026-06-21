@@ -1,27 +1,8 @@
 import React from 'react';
+import proadsLogoImg from '../assets/images/logoproads-05.png';
 import { translations } from '../translations';
-import pickupImg from '../assets/images/pickup.svg';
-import graduationImg from '../assets/images/graduation.svg';
-import proadsImg from '../assets/images/proads.svg';
-import { 
-  ArrowUpRight, 
-  Lightbulb, 
-  Layers, 
-  Cpu, 
-  Award, 
-  Brush, 
-  LineChart, 
-  TrendingUp, 
-  Zap, 
-  Activity, 
-  DollarSign, 
-  MessageSquare,
-  ShieldCheck,
-  Package,
-  Clock,
-  ExternalLink,
-  ChevronRight
-} from 'lucide-react';
+
+import { ArrowUpRight, Lightbulb, Layers, Cpu, Award, Brush, ChartLine as LineChart, TrendingUp, Zap, Activity, DollarSign, MessageSquare, ShieldCheck, Package, Clock, ExternalLink, ChevronRight } from 'lucide-react';
 
 interface HomeViewProps {
   currentLang: 'ar' | 'en';
@@ -81,7 +62,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       type: 'external',
       url: 'https://myprojectplatform.com/',
       badge: 'External',
-      image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80"
+      image: "/assets/images/myprojectplatform.png"
     },
     {
       id: 'mosque-clock',
@@ -90,7 +71,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       type: 'external',
       url: 'https://manarahclock.net/',
       badge: 'External',
-      image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80"
+      image: "/assets/images/manarahclock.png"
     },
     {
       id: 'pickup',
@@ -98,7 +79,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       tagline: currentLang === 'ar' ? 'براءة اختراع معتمدة، جهاز مصعد سور الفيلا الذكي لاستلام طرود التوصيل والوجبات بخصوصية مطلقة.' : 'Patented wall parcel elevator for delivery and groceries without door open.',
       type: 'internal',
       badge: 'Patented',
-      image: pickupImg
+      image: "/assets/images/pickup.png"
     },
     {
       id: 'graduation',
@@ -106,7 +87,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       tagline: currentLang === 'ar' ? 'براند سعودي أصيل 100% لتصميم وتصنيع الملابس الأكاديمية والوطنية بتفاصيل تراثية وفخمة.' : '100% original Saudi designer graduation gowns and national uniforms.',
       type: 'internal',
       badge: 'Sovereign Brand',
-      image: graduationImg
+      image: "/assets/images/Graduation_outfit.png"
     },
     {
       id: 'proads',
@@ -114,7 +95,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       tagline: currentLang === 'ar' ? 'تقنيات العرض الضوئي التفاعلي والذكاء التسويقي المبتكر في المراكز التجارية.' : 'Patented laser 3D holographic projection and immersive character engine.',
       type: 'internal',
       badge: 'Proprietary',
-      image: proadsImg
+      image: proadsLogoImg
     },
     {
       id: 'tech',

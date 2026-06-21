@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graduationPageData } from '../pagesData';
 import { translations } from '../translations';
-import graduationImg from '../assets/images/graduation.svg';
+const graduationImg = '/assets/images/Graduation_outfit.png';
 import { ShieldCheck, Award, Flag, Send, PhoneCall, Heart, Star } from 'lucide-react';
 
 interface GraduationViewProps {
@@ -61,10 +61,9 @@ export default function GraduationView({ currentLang }: GraduationViewProps) {
             {/* National Graduation Uniform Brand Product Image representation */}
             <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-lg relative">
               <img 
-                src={graduationImg} 
-                alt="Saudi National Academic Graduation Gowns Design" 
-                className="w-full h-auto object-cover"
-                referrerPolicy="no-referrer"
+                src={graduationImg}
+                alt="Saudi National Academic Graduation Gowns Design"
+                className="w-full h-auto object-contain bg-black"
               />
               <div className="absolute top-3 left-3 bg-emerald-700 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow">
                 Authentic Craftsmanship

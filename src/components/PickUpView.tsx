@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { pickupPageData } from '../pagesData';
 import { translations } from '../translations';
-import pickupImg from '../assets/images/pickup.svg';
-import { ShieldCheck, Package, Award, ArrowRight, CornerDownLeft, Send, PhoneCall, HelpCircle } from 'lucide-react';
+const pickupImg = '/assets/images/pickup.png';
+import { ShieldCheck, Package, Award, ArrowRight, CornerDownLeft, Send, PhoneCall, Circle as HelpCircle } from 'lucide-react';
 
 interface PickUpViewProps {
   currentLang: 'ar' | 'en';
@@ -64,10 +64,9 @@ export default function PickUpView({ currentLang }: PickUpViewProps) {
             {/* Smart Parcel Box Product Image representation */}
             <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-lg relative">
               <img 
-                src={pickupImg} 
-                alt="PickUp Smart Wall-Mounted Cargo Delivery Receiver Box" 
-                className="w-full h-auto object-cover"
-                referrerPolicy="no-referrer"
+                src={pickupImg}
+                alt="PickUp Smart Wall-Mounted Cargo Delivery Receiver Box"
+                className="w-full h-auto object-contain bg-white"
               />
               <div className="absolute top-3 left-3 bg-sky-800 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow">
                 Saudi Patent Approved

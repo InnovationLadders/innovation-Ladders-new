@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { translations } from '../translations';
 import { Menu, X, ChevronDown, Globe, Phone, Mail, MapPin } from 'lucide-react';
-const logoImg = '/assets/images/innovationladderslogo.png';
+import logoImg from '../assets/images/logo.svg';
 
 interface HeaderProps {
   currentLang: 'ar' | 'en';
@@ -80,7 +80,7 @@ export default function Header({ currentLang, setLang, currentPage, setCurrentPa
           {/* Logo Brand area */}
           <div className="flex items-center cursor-pointer" onClick={() => handleNav('home')}>
             {/* Custom SVG logo representing spiral ladders */}
-            <div className="relative flex items-center justify-center p-1 bg-white rounded-xl shadow-sm border border-sky-100 w-[42px] h-[42px]">
+            <div className="relative flex items-center justify-center p-1.5 bg-white rounded-xl shadow-sm border border-sky-100 w-[40px] h-[40px]">
               <img
                 src={logoImg}
                 alt="Innovation Ladders Logo"

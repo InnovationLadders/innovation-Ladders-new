@@ -186,15 +186,13 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative flex justify-center">
-            <div className="relative w-full max-w-sm aspect-square bg-white rounded-3xl p-8 shadow-lg border border-sky-100 flex items-center justify-center">
+          <div className="lg:col-span-5 flex justify-center items-center">
+            <div className="relative bg-white rounded-2xl p-4 shadow-md border border-sky-100 w-44 h-44 flex items-center justify-center">
               <img
                 src="/assets/images/innovationladderslogo.png"
                 alt="Innovation Ladders Logo"
                 className="w-full h-full object-contain"
               />
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-sky-400 rounded-full filter blur-xl opacity-20 animate-pulse" />
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-sky-300 rounded-full filter blur-xl opacity-20" />
             </div>
           </div>
         </div>

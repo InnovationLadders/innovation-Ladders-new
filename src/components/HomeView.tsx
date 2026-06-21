@@ -187,19 +187,14 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
           </div>
 
           <div className="lg:col-span-5 relative flex justify-center">
-            {/* Elegant visual graphics frame matching the ocean high-rise feel */}
-            <div className="relative w-full max-w-sm aspect-square bg-gradient-to-tr from-sky-400/20 to-purple-400/20 rounded-3xl p-4 shadow-inner">
-              <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80" 
-                  alt="Innovation Lab workspace" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-blue-900/10 mix-blend-multiply" />
-              </div>
-              {/* Absolutes decorative blobs */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-pink-500 rounded-full mix-blend-multiply filter blur-sm opacity-20 animate-pulse" />
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-sky-400 rounded-full mix-blend-multiply filter blur-sm opacity-25" />
+            <div className="relative w-full max-w-sm aspect-square bg-white rounded-3xl p-8 shadow-lg border border-sky-100 flex items-center justify-center">
+              <img
+                src="/assets/images/innovationladderslogo.png"
+                alt="Innovation Ladders Logo"
+                className="w-full h-full object-contain"
+              />
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-sky-400 rounded-full filter blur-xl opacity-20 animate-pulse" />
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-sky-300 rounded-full filter blur-xl opacity-20" />
             </div>
           </div>
         </div>

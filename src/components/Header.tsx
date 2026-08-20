@@ -83,7 +83,7 @@ export default function Header({ currentLang, setLang, currentPage, setCurrentPa
             <img
               src={logoImg}
               alt="Innovation Ladders Logo"
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </div>
 

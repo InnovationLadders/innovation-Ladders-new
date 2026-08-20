@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { ArrowUpRight, CircleCheck as CheckCircle2, MonitorPlay, PhoneCall, Play, Sparkles } from 'lucide-react';
+import React from 'react';
+import { ArrowUpRight, MonitorPlay, PhoneCall, Play, Sparkles } from 'lucide-react';
 import transparentLedImage from '../assets/images/Transparent_LED_Display.jpg';
+import leyardLedImage from '../assets/images/Leyard_LED_Display.webp';
 import deliveryBoxImage from '../assets/images/LED_Delivery_Box_Display.jpg';
 import interactiveFloorImage from '../assets/images/Interactive_LED_Floor.jpg';
 import goboImage from '../assets/images/GOBO_Logo_Projector.jpg';
@@ -23,6 +24,16 @@ interface DisplaySolution {
 }
 
 const displaySolutions: DisplaySolution[] = [
+  {
+    id: 'leyard-led',
+    nameAr: 'Leyard LED Display | شاشات العرض الخارجي والداخلي والفعاليات',
+    nameEn: 'Leyard LED Display | Indoor, Outdoor & Event Screens',
+    descriptionAr: 'شاشات LED احترافية فائقة الخفة ومتينة المصممة خصيصاً للتركيب والفك السريع في الفعاليات والأنشطة المباشرة مع الحفاظ على أعلى جودة عرض بصرية.',
+    descriptionEn: 'Professional, ultra-lightweight and durable LED screens designed for fast installation and dismantling at events and live activities while maintaining the highest visual display quality.',
+    image: leyardLedImage,
+    videoId: 'jbvE-dyuPeA',
+    accent: 'sky',
+  },
   {
     id: 'transparent-led',
     nameAr: 'Transparent LED Display | الشاشة الشفافة',
@@ -95,12 +106,7 @@ const accentClasses: Record<string, { badge: string; border: string; button: str
 };
 
 export default function VisualDisplaySolutionsView({ currentLang }: VisualDisplaySolutionsViewProps) {
-  const [activeId, setActiveId] = useState(displaySolutions[0].id);
-  const activeSolution = displaySolutions.find((solution) => solution.id === activeId) ?? displaySolutions[0];
-  const colors = accentClasses[activeSolution.accent];
   const isArabic = currentLang === 'ar';
-  const activeName = isArabic ? activeSolution.nameAr : activeSolution.nameEn;
-  const activeDescription = isArabic ? activeSolution.descriptionAr : activeSolution.descriptionEn;
 
   return (
     <div className="min-h-screen bg-slate-50 py-10 sm:py-14">
@@ -122,88 +128,65 @@ export default function VisualDisplaySolutionsView({ currentLang }: VisualDispla
           </div>
         </header>
 
-        <div className="grid grid-cols-1 items-start gap-7 lg:grid-cols-12">
-          <aside className="rounded-3xl border border-slate-200 bg-white p-3 shadow-sm lg:col-span-4">
-            <div className="px-3 pb-3 pt-2">
-              <p className="text-xs font-black uppercase tracking-widest text-slate-400">
-                {isArabic ? 'اختر الحل المناسب' : 'CHOOSE A SOLUTION'}
-              </p>
-            </div>
-            <div className="space-y-1">
-              {displaySolutions.map((solution) => {
-                const solutionColors = accentClasses[solution.accent];
-                const isActive = solution.id === activeId;
-                return (
-                  <button
-                    key={solution.id}
-                    type="button"
-                    onClick={() => setActiveId(solution.id)}
-                    className={`flex w-full items-center gap-3 rounded-2xl p-3 text-right transition-all duration-200 ${isArabic ? 'text-right' : 'text-left'} ${isActive ? `${solutionColors.badge} shadow-sm` : 'text-slate-700 hover:bg-slate-50'}`}
-                  >
-                    <span className={`flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl ${isActive ? 'ring-2 ring-white' : 'bg-slate-100'}`}>
-                      <img src={solution.image} alt="" className="h-full w-full object-cover" />
-                    </span>
-                    <span className="min-w-0 flex-1 text-xs font-bold leading-5 sm:text-sm">
-                      {isArabic ? solution.nameAr : solution.nameEn}
-                    </span>
-                    {isActive && <CheckCircle2 className={`h-4 w-4 shrink-0 ${solutionColors.icon}`} />}
-                  </button>
-                );
-              })}
-            </div>
-          </aside>
+        <div className="space-y-8">
+          {displaySolutions.map((solution, index) => {
+            const colors = accentClasses[solution.accent];
+            const name = isArabic ? solution.nameAr : solution.nameEn;
+            const description = isArabic ? solution.descriptionAr : solution.descriptionEn;
 
-          <section className={`overflow-hidden rounded-3xl border bg-white shadow-lg ${colors.border} lg:col-span-8`}>
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="relative min-h-[280px] bg-slate-900 lg:min-h-[500px]">
-                <img src={activeSolution.image} alt={activeName} className="h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 text-white">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-black/45 px-3 py-2 text-xs font-bold backdrop-blur">
-                    <MonitorPlay className="h-4 w-4" />
-                    {isArabic ? 'حل بصري متكامل' : 'Complete visual solution'}
-                  </span>
-                  <span className="rounded-full bg-white/15 px-3 py-2 text-xs font-bold backdrop-blur">{displaySolutions.indexOf(activeSolution) + 1} / {displaySolutions.length}</span>
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-between gap-7 p-6 sm:p-8">
-                <div className="space-y-5">
-                  <span className={`inline-flex rounded-full px-3 py-1 text-xs font-bold ${colors.badge}`}>
-                    {isArabic ? 'حلول شاشات وإعلانات' : 'Display & advertising technology'}
-                  </span>
-                  <h2 className="text-2xl font-black leading-tight text-slate-950 sm:text-3xl">{activeName}</h2>
-                  <p className="text-sm leading-7 text-slate-600 sm:text-base">{activeDescription}</p>
-                  <div className="flex items-center gap-2 border-t border-slate-100 pt-5 text-xs font-semibold text-slate-500">
-                    <Play className={`h-4 w-4 ${colors.icon}`} />
-                    {isArabic ? 'شاهد الفيديو التوضيحي للحل' : 'Watch the solution overview'}
+            return (
+              <article key={solution.id} className={`overflow-hidden rounded-3xl border bg-white shadow-lg ${colors.border}`}>
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                  <div className="relative min-h-[280px] bg-slate-900 lg:min-h-[500px]">
+                    <img src={solution.image} alt={name} className="h-full w-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 text-white">
+                      <span className="inline-flex items-center gap-2 rounded-full bg-black/45 px-3 py-2 text-xs font-bold backdrop-blur">
+                        <MonitorPlay className="h-4 w-4" />
+                        {isArabic ? 'حل بصري متكامل' : 'Complete visual solution'}
+                      </span>
+                      <span className="rounded-full bg-white/15 px-3 py-2 text-xs font-bold backdrop-blur">{index + 1} / {displaySolutions.length}</span>
+                    </div>
                   </div>
-                  <div className="aspect-video overflow-hidden rounded-2xl bg-slate-950 shadow-inner">
-                    <iframe
-                      key={activeSolution.videoId}
-                      className="h-full w-full"
-                      src={`https://www.youtube.com/embed/${activeSolution.videoId}`}
-                      title={activeName}
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
+
+                  <div className="flex flex-col justify-between gap-7 p-6 sm:p-8">
+                    <div className="space-y-5">
+                      <span className={`inline-flex rounded-full px-3 py-1 text-xs font-bold ${colors.badge}`}>
+                        {isArabic ? 'حلول شاشات وإعلانات' : 'Display & advertising technology'}
+                      </span>
+                      <h2 className="text-2xl font-black leading-tight text-slate-950 sm:text-3xl">{name}</h2>
+                      <p className="text-sm leading-7 text-slate-600 sm:text-base">{description}</p>
+                      <div className="flex items-center gap-2 border-t border-slate-100 pt-5 text-xs font-semibold text-slate-500">
+                        <Play className={`h-4 w-4 ${colors.icon}`} />
+                        {isArabic ? 'شاهد الفيديو التوضيحي للحل' : 'Watch the solution overview'}
+                      </div>
+                      <div className="aspect-video overflow-hidden rounded-2xl bg-slate-950 shadow-inner">
+                        <iframe
+                          className="h-full w-full"
+                          src={`https://www.youtube.com/embed/${solution.videoId}`}
+                          title={name}
+                          loading="lazy"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-3 border-t border-slate-100 pt-5 sm:flex-row">
+                      <a href="https://wa.me/966554344899" target="_blank" rel="noopener noreferrer" className={`inline-flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold text-white transition ${colors.button}`}>
+                        <PhoneCall className="h-4 w-4" />
+                        {isArabic ? 'اطلب استشارة' : 'Request a consultation'}
+                      </a>
+                      <a href={`https://www.youtube.com/watch?v=${solution.videoId}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-4 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50">
+                        <ArrowUpRight className="h-4 w-4" />
+                        {isArabic ? 'فتح الفيديو' : 'Open video'}
+                      </a>
+                    </div>
                   </div>
                 </div>
-
-                <div className="flex flex-col gap-3 border-t border-slate-100 pt-5 sm:flex-row">
-                  <a href="https://wa.me/966554344899" target="_blank" rel="noopener noreferrer" className={`inline-flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold text-white transition ${colors.button}`}>
-                    <PhoneCall className="h-4 w-4" />
-                    {isArabic ? 'اطلب استشارة' : 'Request a consultation'}
-                  </a>
-                  <a href={`https://www.youtube.com/watch?v=${activeSolution.videoId}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-4 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-50">
-                    <ArrowUpRight className="h-4 w-4" />
-                    {isArabic ? 'فتح الفيديو' : 'Open video'}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
+              </article>
+            );
+          })}
         </div>
       </div>
     </div>

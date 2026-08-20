@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { gulfHatPageData } from '../pagesData';
 import { translations } from '../translations';
 import { ShieldCheck, Award, Trash2, Send, PhoneCall, Gift, Check, ShoppingBag } from 'lucide-react';
-import gulfhatImg from '../assets/images/gulfhat.svg';
+import gulfhatImg from '../assets/images/gulf_hat.jpg';
 
 interface GulfHatViewProps {
   currentLang: 'ar' | 'en';

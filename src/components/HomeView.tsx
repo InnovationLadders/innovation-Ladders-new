@@ -1,8 +1,9 @@
 import React from 'react';
-import proadsLogoImg from '../assets/images/proads.svg';
-import logoImg from '../assets/images/logo.svg';
-import pickupImg from '../assets/images/pickup.svg';
-import graduationImg from '../assets/images/graduation.svg';
+import proadsLogoImg from '../assets/images/logoproads.png';
+import logoImg from '../assets/images/logo.png';
+import pickupImg from '../assets/images/pickup.png';
+import graduationImg from '../assets/images/graduation.png';
+import gulfhatImg from '../assets/images/gulf_hat.jpg';
 import visualDisplayImg from '../assets/images/Transparent_LED_Display.jpg';
 import { translations } from '../translations';
 
@@ -92,6 +93,14 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       type: 'internal',
       badge: 'Sovereign Brand',
       image: graduationImg
+    },
+    {
+      id: 'gulfhat',
+      name: currentLang === 'ar' ? 'القبعة الخليجية GulfHat' : 'The GulfHat',
+      tagline: currentLang === 'ar' ? 'علامة تجارية سعودية مسجلة تعيد صياغة الزي الخليجي التقليدي كقطعة واحدة أنيقة وعصرية.' : 'A registered Saudi brand reinventing traditional Gulf headwear as one elegant easy-wear piece.',
+      type: 'internal',
+      badge: 'Saudi Brand',
+      image: gulfhatImg
     },
     {
       id: 'proads',

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { translations } from '../translations';
 import { Menu, X, ChevronDown, Globe, Phone, Mail, MapPin } from 'lucide-react';
-import logoImg from '../assets/images/logo.svg';
+import logoImg from '../assets/images/logo.png';
 
 interface HeaderProps {
   currentLang: 'ar' | 'en';

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { odooPageData } from '../pagesData';
 import { translations } from '../translations';
-import odooDashboardImg from '../assets/images/odoo.svg';
-import { CheckCircle, ShieldAlert, Award, ArrowRight, CornerDownLeft, Send, PhoneCall, Clock } from 'lucide-react';
+import odooDashboardImg from '../assets/images/odoo.jpg';
+import { CircleCheck as CheckCircle, ShieldAlert, Award, ArrowRight, CornerDownLeft, Send, PhoneCall, Clock } from 'lucide-react';
 
 interface OdooViewProps {
   currentLang: 'ar' | 'en';

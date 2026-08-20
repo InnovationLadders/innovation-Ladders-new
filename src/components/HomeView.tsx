@@ -2,9 +2,11 @@ import React from 'react';
 import proadsLogoImg from '../assets/images/logoproads.png';
 import logoImg from '../assets/images/logo.png';
 import pickupImg from '../assets/images/pickup.png';
-import graduationImg from '../assets/images/graduation.png';
-import gulfhatImg from '../assets/images/gulf_hat.jpg';
+import graduationImg from '../assets/images/graduation copy.png';
+import gulfhatImg from '../assets/images/gulf_hat-01.jpg';
 import visualDisplayImg from '../assets/images/Transparent_LED_Display.jpg';
+import myprojectImg from '../assets/images/myproject.jpg';
+import manarahImg from '../assets/images/manarah.jpg';
 import { translations } from '../translations';
 
 import { ArrowUpRight, Lightbulb, Layers, Cpu, Award, Brush, ChartLine as LineChart, TrendingUp, Zap, Activity, DollarSign, MessageSquare, ShieldCheck, Package, Clock, ExternalLink, ChevronRight } from 'lucide-react';
@@ -67,7 +69,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       type: 'external',
       url: 'https://myprojectplatform.com/',
       badge: 'External',
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+      image: myprojectImg
     },
     {
       id: 'mosque-clock',
@@ -76,7 +78,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       type: 'external',
       url: 'https://manarahclock.net/',
       badge: 'External',
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+      image: manarahImg
     },
     {
       id: 'pickup',

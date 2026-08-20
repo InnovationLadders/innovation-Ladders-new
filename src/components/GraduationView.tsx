@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { graduationPageData } from '../pagesData';
 import { translations } from '../translations';
-const graduationImg = '/assets/images/Graduation_outfit.png';
+import graduationImg from '../assets/images/graduation.svg';
 import { ShieldCheck, Award, Flag, Send, PhoneCall, Heart, Star } from 'lucide-react';
 
 interface GraduationViewProps {

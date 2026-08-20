@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { proadsPageData } from '../pagesData';
 import { translations } from '../translations';
-import proadsImg from '../assets/images/logoproads-05.png';
+import proadsImg from '../assets/images/proads.svg';
 import { Play, Sparkles, Tv, CircleCheck as CheckCircle, Smartphone, Send, PhoneCall } from 'lucide-react';
 
 interface ProAdsViewProps {

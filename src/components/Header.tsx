@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { translations } from '../translations';
 import { Menu, X, ChevronDown, Globe, Phone, Mail, MapPin } from 'lucide-react';
+import logoImg from '../assets/images/logo.svg';
 
 interface HeaderProps {
   currentLang: 'ar' | 'en';
@@ -79,7 +80,7 @@ export default function Header({ currentLang, setLang, currentPage, setCurrentPa
           {/* Logo Brand area */}
           <div className="flex items-center cursor-pointer" onClick={() => handleNav('home')}>
             <img
-              src="/assets/images/innovationladderslogo2.png"
+              src={logoImg}
               alt="Innovation Ladders Logo"
               className="h-12 w-auto object-contain"
             />

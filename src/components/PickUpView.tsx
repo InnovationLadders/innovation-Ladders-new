@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { pickupPageData } from '../pagesData';
 import { translations } from '../translations';
-const pickupImg = '/assets/images/pickup.png';
+import pickupImg from '../assets/images/pickup.svg';
 import { ShieldCheck, Package, Award, ArrowRight, CornerDownLeft, Send, PhoneCall, Circle as HelpCircle } from 'lucide-react';
 
 interface PickUpViewProps {

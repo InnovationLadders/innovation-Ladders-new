@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { gulfHatPageData } from '../pagesData';
 import { translations } from '../translations';
 import { ShieldCheck, Award, Trash2, Send, PhoneCall, Gift, Check, ShoppingBag } from 'lucide-react';
+import gulfhatImg from '../assets/images/gulfhat.svg';
 
 interface GulfHatViewProps {
   currentLang: 'ar' | 'en';
@@ -34,19 +35,19 @@ export default function GulfHatView({ currentLang }: GulfHatViewProps) {
       title: currentLang === 'ar' ? 'الموديل الأبيض الكلاسيكي' : 'Classic White Model',
       tag: 'White Color',
       desc: currentLang === 'ar' ? 'يحاكي الغترة البيضاء زاهية البياض والعقال الأسود الأنيق بخفة تامة ومثالية.' : 'Traditional beautiful white model with elegant lightweight black Iqal borders.',
-      img: '/assets/images/gulfhatclassic.png'
+      img: gulfhatImg
     },
     {
       title: currentLang === 'ar' ? 'ألوان الأندية الرياضية المخصصة' : 'Custom Sports Club Colors',
       tag: 'Custom Club Model',
       desc: currentLang === 'ar' ? 'تصميم مخصص بالكامل يحمل ألوان وشعار الهلال، الاتحاد، الأهلي، النصر، أو أي نادٍ آخر.' : 'Can be fully customized for any sports club with coordinate colors & crest logos.',
-      img: '/assets/images/Gulfhatsport.png'
+      img: gulfhatImg
     },
     {
       title: currentLang === 'ar' ? 'موديل الأطفال المدرسي والمناسباتي' : 'Children events special',
       tag: 'Kids Model',
       desc: currentLang === 'ar' ? 'مثالي للأطفال لخفته الفائقة وسهولة ارتداءه في ثانية واحدة دون فوضى وضياع.' : 'Ready to wear in one second. Fits kids perfectly for patriotic school dramas and national day events.',
-      img: '/assets/images/gulfhtkids.png'
+      img: gulfhatImg
     }
   ];
 

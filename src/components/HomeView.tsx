@@ -1,5 +1,8 @@
 import React from 'react';
-import proadsLogoImg from '../assets/images/logoproads-05.png';
+import proadsLogoImg from '../assets/images/proads.svg';
+import logoImg from '../assets/images/logo.svg';
+import pickupImg from '../assets/images/pickup.svg';
+import graduationImg from '../assets/images/graduation.svg';
 import { translations } from '../translations';
 
 import { ArrowUpRight, Lightbulb, Layers, Cpu, Award, Brush, ChartLine as LineChart, TrendingUp, Zap, Activity, DollarSign, MessageSquare, ShieldCheck, Package, Clock, ExternalLink, ChevronRight } from 'lucide-react';
@@ -62,7 +65,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       type: 'external',
       url: 'https://myprojectplatform.com/',
       badge: 'External',
-      image: "/assets/images/myprojectplatform.png"
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 'mosque-clock',
@@ -71,7 +74,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       type: 'external',
       url: 'https://manarahclock.net/',
       badge: 'External',
-      image: "/assets/images/manarahclock.png"
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
     },
     {
       id: 'pickup',
@@ -79,7 +82,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       tagline: currentLang === 'ar' ? 'براءة اختراع معتمدة، جهاز مصعد سور الفيلا الذكي لاستلام طرود التوصيل والوجبات بخصوصية مطلقة.' : 'Patented wall parcel elevator for delivery and groceries without door open.',
       type: 'internal',
       badge: 'Patented',
-      image: "/assets/images/pickup.png"
+      image: pickupImg
     },
     {
       id: 'graduation',
@@ -87,7 +90,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       tagline: currentLang === 'ar' ? 'براند سعودي أصيل 100% لتصميم وتصنيع الملابس الأكاديمية والوطنية بتفاصيل تراثية وفخمة.' : '100% original Saudi designer graduation gowns and national uniforms.',
       type: 'internal',
       badge: 'Sovereign Brand',
-      image: "/assets/images/Graduation_outfit.png"
+      image: graduationImg
     },
     {
       id: 'proads',
@@ -189,7 +192,7 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
           <div className="lg:col-span-5 flex justify-center items-center">
             <div className="relative bg-white rounded-2xl p-4 shadow-md border border-sky-100 w-44 h-44 flex items-center justify-center">
               <img
-                src="/assets/images/innovationladderslogo.png"
+                src={logoImg}
                 alt="Innovation Ladders Logo"
                 className="w-full h-full object-contain"
               />

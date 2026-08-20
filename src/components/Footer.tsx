@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { translations } from '../translations';
 import { Phone, Mail, MapPin, Send, CircleCheck as CheckCircle, ShieldCheck } from 'lucide-react';
-import { saveSubmission } from '../lib/submissions';
 
 interface FooterProps {
   currentLang: 'ar' | 'en';
@@ -19,13 +18,7 @@ export default function Footer({ currentLang }: FooterProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await saveSubmission({
-      form_type: 'contact',
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
-    });
+    // Database temporarily disconnected. Show local success message only.
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);

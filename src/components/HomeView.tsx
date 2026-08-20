@@ -3,6 +3,7 @@ import proadsLogoImg from '../assets/images/proads.svg';
 import logoImg from '../assets/images/logo.svg';
 import pickupImg from '../assets/images/pickup.svg';
 import graduationImg from '../assets/images/graduation.svg';
+import visualDisplayImg from '../assets/images/Transparent_LED_Display.jpg';
 import { translations } from '../translations';
 
 import { ArrowUpRight, Lightbulb, Layers, Cpu, Award, Brush, ChartLine as LineChart, TrendingUp, Zap, Activity, DollarSign, MessageSquare, ShieldCheck, Package, Clock, ExternalLink, ChevronRight } from 'lucide-react';
@@ -107,6 +108,14 @@ export default function HomeView({ currentLang, setCurrentPage }: HomeViewProps)
       type: 'internal',
       badge: 'Software Hub',
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      id: 'visual-display',
+      name: currentLang === 'ar' ? 'حلول شاشات الإعلانات والعرض المرئي' : 'Visual Display Solutions',
+      tagline: currentLang === 'ar' ? 'الشاشة الشفافة، البوكس المتحرك، الأرضية التفاعلية، البروجكتر الضوئي، الإسقاط الضخم والشاشة الطائرة.' : 'Transparent LED, delivery box screens, interactive floors, GOBO projectors, projection mapping and flying displays.',
+      type: 'internal',
+      badge: 'Display Tech',
+      image: visualDisplayImg
     }
   ];
 

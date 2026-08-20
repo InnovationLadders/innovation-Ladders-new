@@ -49,6 +49,7 @@ export default function Header({ currentLang, setLang, currentPage, setCurrentPa
     { id: 'gulfhat', name: currentLang === 'ar' ? 'القبعة الخليجية GulfHat' : 'The GulfHat', type: 'internal' },
     { id: 'graduation', name: currentLang === 'ar' ? 'زي التخرج' : 'Graduation Uniform', type: 'internal' },
     { id: 'proads', name: currentLang === 'ar' ? 'الأنشطة الترويجية و ProAds' : 'ProAds & Dolphin Dolly', type: 'internal' },
+    { id: 'visual-display', name: currentLang === 'ar' ? 'حلول شاشات الإعلانات والعرض المرئي' : 'Visual Display Solutions', type: 'internal' },
     { id: 'tech', name: currentLang === 'ar' ? 'التقنيات والحلول الأخرى' : 'Other Tech Solutions', type: 'internal' },
   ];
 
@@ -126,7 +127,7 @@ export default function Header({ currentLang, setLang, currentPage, setCurrentPa
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className={`px-4 py-2 rounded-lg font-medium text-sm flex items-center gap-1 transition-all duration-200 ${
-                  ['pickup', 'graduation', 'proads', 'tech', 'portfolio-root'].includes(currentPage)
+                  ['pickup', 'graduation', 'proads', 'visual-display', 'tech', 'portfolio-root'].includes(currentPage)
                     ? 'bg-sky-800 text-white shadow-md'
                     : 'text-slate-700 hover:bg-white/55 hover:text-sky-950'
                 }`}

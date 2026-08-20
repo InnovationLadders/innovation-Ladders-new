@@ -9,6 +9,7 @@ import ProAdsView from './components/ProAdsView';
 import OtherSolutionsView from './components/OtherSolutionsView';
 import GraduationView from './components/GraduationView';
 import CompetitionView from './components/CompetitionView';
+import VisualDisplaySolutionsView from './components/VisualDisplaySolutionsView';
 
 export default function App() {
   const [currentLang, setLang] = useState<'ar' | 'en'>('ar');
@@ -58,6 +59,8 @@ export default function App() {
         return <GraduationView currentLang={currentLang} />;
       case 'competitions':
         return <CompetitionView currentLang={currentLang} />;
+      case 'visual-display':
+        return <VisualDisplaySolutionsView currentLang={currentLang} />;
       default:
         return <HomeView currentLang={currentLang} setCurrentPage={handlePageNavigation} />;
     }

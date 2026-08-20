@@ -10,10 +10,27 @@ import OtherSolutionsView from './components/OtherSolutionsView';
 import GraduationView from './components/GraduationView';
 import CompetitionView from './components/CompetitionView';
 import VisualDisplaySolutionsView from './components/VisualDisplaySolutionsView';
+import AdminLoginView from './components/AdminLoginView';
+import AdminDashboardView from './components/AdminDashboardView';
+import { useAdminAuth } from './lib/submissions';
+
+function isAdminRoute(): boolean {
+  const hash = window.location.hash.toLowerCase();
+  const path = window.location.pathname.toLowerCase();
+  return hash === '#admin-login' || hash === '#/admin-login' || path === '/admin-login' || path === '/admin';
+}
 
 export default function App() {
   const [currentLang, setLang] = useState<'ar' | 'en'>('ar');
   const [currentPage, setCurrentPage] = useState<string>('home');
+  const [isAdminPage, setIsAdminPage] = useState<boolean>(isAdminRoute());
+  const { isAuthenticated, loading: authLoading, signOut } = useAdminAuth();
+
+  useEffect(() => {
+    const onHashChange = () => setIsAdminPage(isAdminRoute());
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   // Trigger correct HTML direction upon launch
   useEffect(() => {
@@ -40,6 +57,30 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
+
+  const handleBackToSite = () => {
+    window.location.hash = '';
+    setIsAdminPage(false);
+  };
+
+  const handleAdminLoginSuccess = () => {
+    window.location.hash = '#admin-dashboard';
+  };
+
+  // Admin route rendering
+  if (isAdminPage) {
+    if (authLoading) {
+      return (
+        <div className="flex min-h-screen items-center justify-center bg-slate-950">
+          <div className="h-8 w-8 animate-spin rounded-full border-3 border-slate-700 border-t-sky-500" />
+        </div>
+      );
+    }
+    if (isAuthenticated) {
+      return <AdminDashboardView onSignOut={signOut} />;
+    }
+    return <AdminLoginView onSuccess={handleAdminLoginSuccess} onBack={handleBackToSite} />;
+  }
 
   const renderActiveView = () => {
     switch(currentPage) {

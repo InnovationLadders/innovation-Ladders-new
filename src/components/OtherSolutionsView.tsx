@@ -17,6 +17,7 @@ import {
   Sparkles,
   Award
 } from 'lucide-react';
+import { saveSubmission } from '../lib/submissions';
 
 interface OtherSolutionsViewProps {
   currentLang: 'ar' | 'en';
@@ -34,8 +35,16 @@ export default function OtherSolutionsView({ currentLang }: OtherSolutionsViewPr
     notes: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await saveSubmission({
+      form_type: 'other',
+      name: formData.name,
+      phone: formData.phone,
+      subject: `استفسار عن ${activeItem.name}`,
+      message: formData.notes,
+      details: { product: activeItem.name },
+    });
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);

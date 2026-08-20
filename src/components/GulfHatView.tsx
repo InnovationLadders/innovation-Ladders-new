@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { gulfHatPageData } from '../pagesData';
 import { translations } from '../translations';
 import { ShieldCheck, Award, Trash2, Send, PhoneCall, Gift, Check, ShoppingBag } from 'lucide-react';
+import { saveSubmission } from '../lib/submissions';
 import gulfhatImg from '../assets/images/gulf_hat-01.jpg';
 
 interface GulfHatViewProps {
@@ -21,8 +22,16 @@ export default function GulfHatView({ currentLang }: GulfHatViewProps) {
     notes: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await saveSubmission({
+      form_type: 'gulfhat',
+      name: formData.name,
+      phone: formData.phone,
+      subject: 'طلب قبعة خليجية',
+      message: formData.notes,
+      details: { colorType: formData.colorType, quantity: formData.quantity },
+    });
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);

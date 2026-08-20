@@ -3,6 +3,7 @@ import { proadsPageData } from '../pagesData';
 import { translations } from '../translations';
 import proadsImg from '../assets/images/logoproads.png';
 import { Play, Sparkles, Tv, CircleCheck as CheckCircle, Smartphone, Send, PhoneCall } from 'lucide-react';
+import { saveSubmission } from '../lib/submissions';
 
 interface ProAdsViewProps {
   currentLang: 'ar' | 'en';
@@ -21,8 +22,16 @@ export default function ProAdsView({ currentLang }: ProAdsViewProps) {
     notes: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await saveSubmission({
+      form_type: 'proads',
+      name: formData.name,
+      phone: formData.phone,
+      subject: 'طلب ProAds',
+      message: formData.notes,
+      details: { venue: formData.venue, duration: formData.duration },
+    });
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);

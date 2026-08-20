@@ -3,6 +3,7 @@ import { odooPageData } from '../pagesData';
 import { translations } from '../translations';
 import odooDashboardImg from '../assets/images/odoo.jpg';
 import { CircleCheck as CheckCircle, ShieldAlert, Award, ArrowRight, CornerDownLeft, Send, PhoneCall, Clock } from 'lucide-react';
+import { saveSubmission } from '../lib/submissions';
 
 interface OdooViewProps {
   currentLang: 'ar' | 'en';
@@ -21,8 +22,16 @@ export default function OdooView({ currentLang }: OdooViewProps) {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await saveSubmission({
+      form_type: 'odoo',
+      name: formData.name,
+      email: formData.email,
+      subject: 'طلب استشارة Odoo',
+      message: formData.message,
+      details: { company: formData.company, volume: formData.volume },
+    });
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);

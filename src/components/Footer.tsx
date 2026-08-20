@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { translations } from '../translations';
 import { Phone, Mail, MapPin, Send, CheckCircle, ShieldCheck } from 'lucide-react';
+import { saveSubmission } from '../lib/submissions';
 
 interface FooterProps {
   currentLang: 'ar' | 'en';
@@ -16,8 +17,15 @@ export default function Footer({ currentLang }: FooterProps) {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await saveSubmission({
+      form_type: 'contact',
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    });
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);

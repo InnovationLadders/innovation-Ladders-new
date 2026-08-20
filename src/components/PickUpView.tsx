@@ -3,6 +3,7 @@ import { pickupPageData } from '../pagesData';
 import { translations } from '../translations';
 import pickupImg from '../assets/images/pickup.png';
 import { ShieldCheck, Package, Award, ArrowRight, CornerDownLeft, Send, PhoneCall, Circle as HelpCircle } from 'lucide-react';
+import { saveSubmission } from '../lib/submissions';
 
 interface PickUpViewProps {
   currentLang: 'ar' | 'en';
@@ -21,8 +22,16 @@ export default function PickUpView({ currentLang }: PickUpViewProps) {
     notes: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await saveSubmission({
+      form_type: 'pickup',
+      name: formData.name,
+      phone: formData.phone,
+      subject: 'طلب جهاز PickUp',
+      message: formData.notes,
+      details: { city: formData.city, addressDetails: formData.addressDetails },
+    });
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);

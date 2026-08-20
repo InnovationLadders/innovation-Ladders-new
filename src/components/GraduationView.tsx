@@ -3,6 +3,7 @@ import { graduationPageData } from '../pagesData';
 import { translations } from '../translations';
 import graduationImg from '../assets/images/graduation copy.png';
 import { ShieldCheck, Award, Flag, Send, PhoneCall, Heart, Star } from 'lucide-react';
+import { saveSubmission } from '../lib/submissions';
 
 interface GraduationViewProps {
   currentLang: 'ar' | 'en';
@@ -21,8 +22,16 @@ export default function GraduationView({ currentLang }: GraduationViewProps) {
     notes: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await saveSubmission({
+      form_type: 'graduation',
+      name: formData.name,
+      phone: formData.phone,
+      subject: 'طلب أرواب تخرج',
+      message: formData.notes,
+      details: { school: formData.school, qty: formData.qty },
+    });
     setFormSubmitted(true);
     setTimeout(() => {
       setFormSubmitted(false);

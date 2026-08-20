@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { translations } from '../translations';
 import { Send, CheckCircle, Shield, Award, HelpCircle, Lock, Cpu, DollarSign, Heart } from 'lucide-react';
+import { saveSubmission } from '../lib/submissions';
 
 interface CompetitionViewProps {
   currentLang: 'ar' | 'en';
@@ -26,12 +27,31 @@ export default function CompetitionView({ currentLang }: CompetitionViewProps) {
     termsAgreed: false
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.originalityCheck || !formData.termsAgreed) {
       alert(currentLang === 'ar' ? 'يرجى الموافقة على الأصالة والشروط والأحكام للاستمرار.' : 'Please agree to Originality and Terms to submit.');
       return;
     }
+    await saveSubmission({
+      form_type: 'competition',
+      name: formData.fullName,
+      phone: formData.mobile,
+      email: formData.email,
+      subject: 'مسابقة حلول الأمن والخصوصية',
+      message: formData.ideaDesc,
+      details: {
+        city: formData.city,
+        country: formData.country,
+        securityDetails: formData.securityDetails,
+        privacyDetails: formData.privacyDetails,
+        easeImplementation: formData.easeImplementation,
+        easeUse: formData.easeUse,
+        costDetails: formData.costDetails,
+        originalityCheck: formData.originalityCheck,
+        termsAgreed: formData.termsAgreed,
+      },
+    });
     setFormSubmitted(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(() => {

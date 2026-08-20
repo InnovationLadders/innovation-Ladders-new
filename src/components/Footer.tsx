@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { translations } from '../translations';
-import { Phone, Mail, MapPin, Send, CheckCircle, ShieldCheck } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, CircleCheck as CheckCircle, ShieldCheck } from 'lucide-react';
 import { saveSubmission } from '../lib/submissions';
 
 interface FooterProps {

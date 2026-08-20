@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { translations } from '../translations';
-import { Send, CheckCircle, Shield, Award, HelpCircle, Lock, Cpu, DollarSign, Heart } from 'lucide-react';
+import { Send, CircleCheck as CheckCircle, Shield, Award, Circle as HelpCircle, Lock, Cpu, DollarSign, Heart } from 'lucide-react';
 import { saveSubmission } from '../lib/submissions';
 
 interface CompetitionViewProps {

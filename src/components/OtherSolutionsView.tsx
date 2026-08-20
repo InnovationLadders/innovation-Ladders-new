@@ -1,22 +1,7 @@
 import React, { useState } from 'react';
 import { otherSolutionsData } from '../pagesData';
 import { translations } from '../translations';
-import { 
-  HeartHandshake, 
-  MapPin, 
-  Navigation, 
-  Rss, 
-  Compass, 
-  CalendarCheck, 
-  Clock, 
-  Users, 
-  CheckCircle, 
-  Database,
-  PhoneCall,
-  Send,
-  Sparkles,
-  Award
-} from 'lucide-react';
+import { HeartHandshake, MapPin, Navigation, Rss, Compass, CalendarCheck, Clock, Users, CircleCheck as CheckCircle, Database, PhoneCall, Send, Sparkles, Award } from 'lucide-react';
 import { saveSubmission } from '../lib/submissions';
 
 interface OtherSolutionsViewProps {
